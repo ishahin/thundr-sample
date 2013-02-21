@@ -3,12 +3,12 @@
 	<div class="span1" style="font-size: 4em;">
 	  	{{#if status.done}}
 	  		<i class="media-object icon icon-thumbs-up" style="color: #BDB"></i>
-	  	{{/if}}
+	  	{{else}}
 	  	{{#if status.underway}}
 	  		<i class="media-object icon icon-hand-right" style="color: #A0C0EE"></i>
-	  	{{/if}}
-	  	{{#if status.pending}}
+	  	{{else}}
 	  	 	<i class="media-object icon icon-thumbs-down" style="color: #CCC"></i>
+		{{/if}}
 	  	{{/if}}
   	</div>
   	
@@ -26,14 +26,14 @@
 	  	{{#if status.done}}
 			<a href="/task/{{id}}/stop" class="btn">Reset</a>
 	  		<a href="/task/{{id}}/archive" class="btn">Archive</a>
-	  	{{/if}}
+	  	{{else}}
 	  	{{#if status.underway}}
 	  		<a href="/task/{{id}}/stop" class="btn">Reset</a>
 	  		<a href="/task/{{id}}/done" class="btn btn-success">Done</a>
-	  	{{/if}}
-	  	{{#if status.pending}}
+	  	{{else}}
 	  	 	<a href="/task/{{id}}/start" class="btn">Start</a>
 	  	 	<a href="/task/{{id}}/archive" class="btn">Archive</a>
+	  	{{/if}}
 	  	{{/if}}
  	</div>
 </article>
