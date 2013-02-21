@@ -1,0 +1,16 @@
+{{>../partial/header}}
+	<div class="container">
+		{{#each tasks}}
+			{{> ../partial/task this}}
+		{{/each}}
+		</c:forEach>
+	</div>
+	<br/>
+	<br/>
+	
+	<form action="/task/create" method="post" class="form-inline well">
+		<input type="text" name="task.title" class="span3" placeholder="Title"/>
+		<textarea name="task.description" rows="1" class="span7" placeholder="Description"></textarea>
+		<input type="submit" value="Create" class="btn span2"/>
+	</form>
+{{>../partial/footer}}

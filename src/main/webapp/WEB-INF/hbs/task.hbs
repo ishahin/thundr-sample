@@ -1,0 +1,82 @@
+{{>../partial/header}}	
+	<script>
+		$(document).ready(function(){
+			$("#change").click(function(){
+				$("#view").hide();
+				$("#edit").show();
+			});
+		});
+	</script>
+
+<div class="hero-unit">
+	<h1>{{task.title}}</h1>
+	
+	<div id="view" class="media">
+		<div class="span6">
+		
+			<div class="media-object pull-left span2" style="font-size: 4em; color: #CCC;">
+			{{task.status}}
+				{{#if task.status.done}}
+			  		<i class="media-object icon icon-thumbs-up" style="color: #BDB"></i>
+			  	{{/if}}
+			  	{{#if task.status.underway}}
+			  		<i class="media-object icon icon-hand-right" style="color: #A0C0EE"></i>
+			  	{{/if}}
+			  	{{#if task.status.pending}}
+			  	 	<i class="media-object icon icon-thumbs-down" style="color: #CCC"></i>
+			  	{{/if}}
+		  	</div>
+		  	
+			<p>{{task.description}}</p>
+			
+			<p>
+				<a id="change" class="btn btn-primary btn-large">Change</a>
+			</p>
+		</div>
+		
+		<div>
+			{{#if task.status.done}}
+				<a href="/task/{{task.id}}/stop" class="btn">Reset</a>
+		  		<a href="/task/{{task.id}}/archive" class="btn btn-primary">Archive</a>
+		  	{{/if}}
+			{{#if task.status.underway}}
+		  		<a href="/task/{{task.id}}/stop" class="btn">Reset</a>
+		  		<a href="/task/{{task.id}}/done" class="btn btn-success">Done</a>
+		  	{{/if}}
+			{{#if task.status.pending}}
+		  	 	<a href="/task/{{task.id}}/start" class="btn">Start</a>
+		  	 	<a href="/task/{{task.id}}/archive" class="btn">Archive</a>
+  			{{/if}}
+		</div>
+	</div>
+	<div id="edit" style="display: none;">
+		
+		<form action="/task/{{task.id}}" method="post" class="form-horizontal">
+			<input type="hidden" name="task.id" value="{{task.id}}" />
+			<input type="hidden" name="task.archived" value="{{task.archived}}" />
+			
+			<div class="control-group">
+				<label class="control-label" for="title">Title</label>
+				<div class="controls">
+					<input id="title" type="text" name="task.title" value="{{task.title}}" class="span3" />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="description">Description</label>
+				<div class="controls">
+					<textarea id="description" name="task.description" class="span4" rows="4">{{task.description}}</textarea>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<div class="controls">
+					<input type="submit" value="Update" class="btn" />
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</div>
+
+{{>../partial/footer}}

@@ -8,7 +8,7 @@
 	<properties>
 		<gae.version>1.7.4</gae.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<thundr.version>0.9.6</thundr.version>
+		<thundr.version>0.9.7-SNAPSHOT</thundr.version>
 		<objectify.version>4.0a4</objectify.version>
 	</properties>
 
@@ -21,6 +21,13 @@
 			<version>${thundr.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.threewks.thundr</groupId>
+			<artifactId>thundr-handlebars</artifactId>
+			<version>${thundr.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
 
 		<!-- Servlet dependencies star this issue to request support for servlet 3.0 on appengine http://code.google.com/p/googleappengine/issues/detail?id=3091 -->
 		<dependency>
@@ -28,11 +35,6 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
 		</dependency>
 
 		<!-- GAE Dependencies -->
