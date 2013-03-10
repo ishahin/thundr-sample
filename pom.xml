@@ -8,7 +8,7 @@
 	<properties>
 		<gae.version>1.7.4</gae.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<thundr.version>0.9.7-SNAPSHOT</thundr.version>
+		<thundr.version>0.9.7</thundr.version>
 		<objectify.version>4.0a4</objectify.version>
 	</properties>
 
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.threewks.thundr</groupId>
 			<artifactId>thundr-handlebars</artifactId>
-			<version>${thundr.version}</version>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		
