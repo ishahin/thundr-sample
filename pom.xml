@@ -8,7 +8,7 @@
 	<properties>
 		<gae.version>1.7.4</gae.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<thundr.version>0.9.6</thundr.version>
+		<thundr.version>0.9.7</thundr.version>
 		<objectify.version>4.0a4</objectify.version>
 	</properties>
 
@@ -33,6 +33,7 @@
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- GAE Dependencies -->
@@ -40,6 +41,7 @@
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-1.0-sdk</artifactId>
 			<version>${gae.version}</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- Objectify abstracts the datastore to java pojos -->
