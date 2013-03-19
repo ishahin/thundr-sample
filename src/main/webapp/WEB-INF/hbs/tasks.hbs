@@ -1,7 +1,7 @@
-{{>../partial/header}}
+{{> WEB-INF/partial/header.hbs}}
 	<div class="container">
 		{{#each tasks}}
-			{{> ../partial/task this}}
+			{{> WEB-INF/partial/task.hbs this}}
 		{{/each}}
 	</div>
 	<br/>
@@ -12,4 +12,4 @@
 		<textarea name="task.description" rows="1" class="span7" placeholder="Description"></textarea>
 		<input type="submit" value="Create" class="btn span2"/>
 	</form>
-{{>../partial/footer}}
+{{> WEB-INF/partial/footer.hbs}}
