@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.threewks.thundr</groupId>
 			<artifactId>thundr-handlebars</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${thundr.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		
