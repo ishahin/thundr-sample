@@ -42,8 +42,8 @@ remove the git repository and delete any sample code you're not interested in.
 This branch contains a working implementation of a thundr for google appengine which uses
 handlebars as a templating engine.
 
-Read more about thundr-handlebars [here](https://github.com/3wks/thundr-handlebars)
-Read more about thundr-gae [here](http://3wks.github.com/thundr/appengine.html)
+Read more about thundr-handlebars [here](http://3wks.github.io/thundr/modules/thundr-handlebars/handlebars.html)
+Read more about thundr-gae [here](http://3wks.github.io/thundr/modules/thundr-gae/appengine.html)
 
 To run, use the appengine maven plugin:
 
