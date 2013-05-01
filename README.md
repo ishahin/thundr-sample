@@ -3,7 +3,9 @@
 The thundr-sample project contains sample implementations of the thundr
 framework for different deployment environments.
 
-You can read more about thundr [here](http://3wks.gitub.com/thundr)
+You can read more about thundr [here](http://3wks.gitub.com/thundr).
+
+You can see this sample in action [here](http://gae.thundr-sample.appspot.com).
 
 ### Getting it
 You can obtain the source by cloning the git repository from github:
