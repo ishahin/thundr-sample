@@ -1,8 +1,8 @@
-{{> WEB-INF/partial/header.hbs}}
+#parse ("/WEB-INF/partial/header.vm")
 	<div class="container">
-		{{#each tasks}}
-			{{> WEB-INF/partial/task.hbs this}}
-		{{/each}}
+		#foreach( $task in $tasks )
+			#parse ("/WEB-INF/partial/task.vm") 
+		#end
 	</div>
 	<br/>
 	<br/>
@@ -12,4 +12,4 @@
 		<textarea name="task.description" rows="1" class="span7" placeholder="Description"></textarea>
 		<input type="submit" value="Create" class="btn span2"/>
 	</form>
-{{> WEB-INF/partial/footer.hbs}}
+#parse ("/WEB-INF/partial/footer.vm")

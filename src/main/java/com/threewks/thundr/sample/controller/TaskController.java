@@ -7,8 +7,8 @@ import com.threewks.thundr.http.exception.NotFoundException;
 import com.threewks.thundr.sample.Task;
 import com.threewks.thundr.sample.service.TaskService;
 import com.threewks.thundr.sample.service.TaskStatus;
-import com.threewks.thundr.view.handlebars.HandlebarsView;
 import com.threewks.thundr.view.redirect.RedirectView;
+import com.threewks.thundr.view.velocity.VelocityView;
 
 public class TaskController {
 	private TaskService taskService;
@@ -17,10 +17,10 @@ public class TaskController {
 		this.taskService = taskService;
 	}
 
-	public HandlebarsView list() {
+	public VelocityView list() {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("tasks", taskService.list());
-		return new HandlebarsView("tasks", model);
+		return new VelocityView("tasks", model);
 	}
 
 	public RedirectView create(Task task) {
@@ -28,14 +28,14 @@ public class TaskController {
 		return new RedirectView("/task/" + task.getId());
 	}
 
-	public HandlebarsView view(Long task) {
+	public VelocityView view(Long task) {
 		Task taskPojo = taskService.get(task);
 		if (taskPojo == null) {
 			throw new NotFoundException("Could not find task with id '%s'", task);
 		}
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("task", taskPojo);
-		return new HandlebarsView("task", model);
+		return new VelocityView("task", model);
 	}
 
 	public RedirectView update(Task task) {

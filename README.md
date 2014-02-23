@@ -5,16 +5,12 @@ framework for different deployment environments.
 
 You can read more about thundr [here](http://3wks.github.com/thundr).
 
-You can see this sample in action [here](http://gae.thundr-sample.appspot.com).
+## Velocity
 
-## Handlebars
+This branch of thundr-sample shows simple usage of velocity templating on the server side with the thundr framework.
+You can see the sample app running on appengine [here](http://velocity.thundr-sample.appspot.com/)
 
-This branch of thundr-sample shows simple usage of handlebars templating on the server side with the thundr framework.
-You can see sample app running on appengine [here](http://handlebars.thundr-sample.appspot.com/)
-
-The handlebars implementation is provided by [jknack](https://github.com/jknack/handlebars.java).
-
-Read more about handlebars [here](http://handlebarsjs.com/)
+Read more about Apache Velocity [here](http://velocity.apache.org/)
 
 
 ### Getting it
@@ -30,26 +26,18 @@ available by using,
 Switch to a particular example by checking out the branch
 		
 	git checkout <branch-name>
-	e.g. git checkout handlebars
+	e.g. git checkout velocity
 	
+To run, use the appengine maven plugin:
+
+	mvn appengine:devserver
+		
 You can also use the samples as scaffolding - just checkout the branch you want,
 remove the git repository and delete any sample code you're not interested in.
 
 	e.g.
-	git checkout handlebars
+	git checkout velocity
 	rm -rf .git
-	
-### thundr-handlebars
-
-This branch contains a working implementation of a thundr for google appengine which uses
-handlebars as a templating engine.
-
-Read more about thundr-handlebars [here](http://3wks.github.io/thundr/thundr-handlebars/index.html)
-Read more about thundr-gae [here](http://3wks.github.io/thundr/thundr-gae/index.html)
-
-To run, use the appengine maven plugin:
-
-	mvn appengine:devserver
 	
 --------------    
 thundr sample application - Copyright (C) 2013 3wks

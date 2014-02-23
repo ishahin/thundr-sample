@@ -1,7 +1,6 @@
 import com.googlecode.objectify.ObjectifyService;
 import com.threewks.thundr.gae.GaeModule;
 import com.threewks.thundr.gae.objectify.ObjectifyModule;
-import com.threewks.thundr.handlebars.HandlebarsModule;
 import com.threewks.thundr.injection.BaseModule;
 import com.threewks.thundr.injection.UpdatableInjectionContext;
 import com.threewks.thundr.module.DependencyRegistry;
@@ -9,6 +8,7 @@ import com.threewks.thundr.route.Routes;
 import com.threewks.thundr.sample.Task;
 import com.threewks.thundr.sample.service.TaskService;
 import com.threewks.thundr.sample.service.TaskServiceImpl;
+import com.threewks.thundr.velocity.VelocityModule;
 
 public class ApplicationModule extends BaseModule {
 	private ApplicationRoutes applicationRoutes = new ApplicationRoutes();
@@ -18,7 +18,7 @@ public class ApplicationModule extends BaseModule {
 		super.requires(dependencyRegistry);
 		dependencyRegistry.addDependency(GaeModule.class);
 		dependencyRegistry.addDependency(ObjectifyModule.class);
-		dependencyRegistry.addDependency(HandlebarsModule.class);
+		dependencyRegistry.addDependency(VelocityModule.class);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-{{>WEB-INF/partial/header.hbs}}	
+#parse ("/WEB-INF/partial/header.vm")
 	<script>
 		$(document).ready(function(){
 			$("#change").click(function(){
@@ -9,24 +9,22 @@
 	</script>
 
 <div class="hero-unit">
-	<h1>{{task.title}}</h1>
+	<h1>$task.title</h1>
 	
 	<div id="view" class="media">
 		<div class="span6">
 		
 			<div class="media-object pull-left span2" style="font-size: 4em; color: #CCC;">
-				{{#if task.status.done}}
+				#if ( $task.status.done )
 			  		<i class="media-object icon icon-thumbs-up" style="color: #BDB"></i>
-			  	{{else}}
-	  			{{#if task.status.underway}}
+			  	#elseif ( $task.status.underway )
 			  		<i class="media-object icon icon-hand-right" style="color: #A0C0EE"></i>
-			  	{{else}}
+			  	#else
 			  	 	<i class="media-object icon icon-thumbs-down" style="color: #CCC"></i>
-			  	{{/if}}
-	  			{{/if}}
+			  	#end
 		  	</div>
 		  	
-			<p>{{task.description}}</p>
+			<p>$task.description</p>
 			
 			<p>
 				<a id="change" class="btn btn-primary btn-large">Change</a>
@@ -34,37 +32,35 @@
 		</div>
 		
 		<div>
-			{{#if task.status.done}}
-				<a href="/task/{{task.id}}/stop" class="btn">Reset</a>
-		  		<a href="/task/{{task.id}}/archive" class="btn btn-primary">Archive</a>
-		  	{{else}}
-	  		{{#if task.status.underway}}
-		  		<a href="/task/{{task.id}}/stop" class="btn">Reset</a>
-		  		<a href="/task/{{task.id}}/done" class="btn btn-success">Done</a>
-		  	{{else}}
-		  	 	<a href="/task/{{task.id}}/start" class="btn">Start</a>
-		  	 	<a href="/task/{{task.id}}/archive" class="btn">Archive</a>
-  			{{/if}}
-	  		{{/if}}
+			#if ( $task.status.done )
+				<a href="/task/$task.id/stop" class="btn">Reset</a>
+		  		<a href="/task/$task.id/archive" class="btn btn-primary">Archive</a>
+		  	#elseif ( $task.status.underway )
+		  		<a href="/task/$task.id/stop" class="btn">Reset</a>
+		  		<a href="/task/$task.id/done" class="btn btn-success">Done</a>
+		  	#else
+		  	 	<a href="/task/$task.id/start" class="btn">Start</a>
+		  	 	<a href="/task/$task.id/archive" class="btn">Archive</a>
+  			#end
 		</div>
 	</div>
 	<div id="edit" style="display: none;">
 		
-		<form action="/task/{{task.id}}" method="post" class="form-horizontal">
-			<input type="hidden" name="task.id" value="{{task.id}}" />
-			<input type="hidden" name="task.archived" value="{{task.archived}}" />
+		<form action="/task/$task.id" method="post" class="form-horizontal">
+			<input type="hidden" name="task.id" value="$task.id" />
+			<input type="hidden" name="task.archived" value="$task.archived" />
 			
 			<div class="control-group">
 				<label class="control-label" for="title">Title</label>
 				<div class="controls">
-					<input id="title" type="text" name="task.title" value="{{task.title}}" class="span3" />
+					<input id="title" type="text" name="task.title" value="$task.title" class="span3" />
 				</div>
 			</div>
 			
 			<div class="control-group">
 				<label class="control-label" for="description">Description</label>
 				<div class="controls">
-					<textarea id="description" name="task.description" class="span4" rows="4">{{task.description}}</textarea>
+					<textarea id="description" name="task.description" class="span4" rows="4">$task.description</textarea>
 				</div>
 			</div>
 			
@@ -78,4 +74,4 @@
 	</div>
 </div>
 
-{{>WEB-INF/partial/footer.hbs}}
+#parse ("/WEB-INF/partial/footer.vm")

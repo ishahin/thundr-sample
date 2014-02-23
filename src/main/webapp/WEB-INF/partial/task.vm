@@ -1,0 +1,35 @@
+<article id="$task.id" class="task media">
+
+	<div class="span1" style="font-size: 4em;">
+	  	#if ( $task.status.done )
+	  		<i class="media-object icon icon-thumbs-up" style="color: #BDB"></i>
+	  	#elseif ( $task.status.underway )
+	  		<i class="media-object icon icon-hand-right" style="color: #A0C0EE"></i>
+	  	#else
+	  	 	<i class="media-object icon icon-thumbs-down" style="color: #CCC"></i>
+		#end
+  	</div>
+  	
+	<div class="media-body span7">
+	    <h4 class="media-heading">
+	    	<a href="/task/$task.id">$task.title</a>	
+	    </h4>
+		<div>
+			$task.description
+		</div>
+  	</div>
+  	
+  	<div class="span3">
+  		
+	  	#if ( $task.status.done )
+			<a href="/task/$task.id/stop" class="btn">Reset</a>
+	  		<a href="/task/$task.id/archive" class="btn">Archive</a>
+	  	#elseif ( $task.status.underway )
+	  		<a href="/task/$task.id/stop" class="btn">Reset</a>
+	  		<a href="/task/$task.id/done" class="btn btn-success">Done</a>
+	  	#else
+	  	 	<a href="/task/$task.id/start" class="btn">Start</a>
+	  	 	<a href="/task/$task.id/archive" class="btn">Archive</a>
+	  	#end
+ 	</div>
+</article>

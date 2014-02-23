@@ -22,8 +22,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.threewks.thundr</groupId>
-			<artifactId>thundr-handlebars</artifactId>
-			<version>${thundr.version}</version>
+			<artifactId>thundr-velocity</artifactId>
+			<version>${thundr.version}-alpha</version>
 			<scope>compile</scope>
 		</dependency>
 		
