@@ -6,27 +6,24 @@ import com.googlecode.objectify.annotation.Cache;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
+import com.threewks.thundr.gae.objectify.repository.RepositoryEntity;
 import com.threewks.thundr.sample.service.TaskStatus;
 
 @Cache
 @Entity
-public class Task {
+public class Task implements RepositoryEntity {
 
-	@Id
-	private Long id;
+	@Id private Long id;
 
 	private String title;
 
 	private String description;
 
-	@Index
-	private TaskStatus status;
+	@Index private TaskStatus status;
 
-	@Index
-	private boolean archived;
+	@Index private boolean archived;
 
-	@SuppressWarnings("unused")
-	private Date created = new Date();
+	@SuppressWarnings("unused") private Date created = new Date();
 
 	public String getTitle() {
 		return title;

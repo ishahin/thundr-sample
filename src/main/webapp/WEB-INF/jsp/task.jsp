@@ -45,22 +45,22 @@
 		
 		<div>
 			<t:if condition="${task.status == 'Done'}">
-				<a href="/task/${task.id}/stop" class="btn">Reset</a>
-		  		<a href="/task/${task.id}/archive" class="btn btn-primary">Archive</a>
+				<a href="<t:route name="stop-task" task="${task.id}"/>" class="btn">Reset</a>
+		  		<a href="<t:route name="archive-task" task="${task.id}"/>" class="btn btn-primary">Archive</a>
 		  	</t:if>
 		  	<t:elseif condition="${task.status == 'Underway'}">
-		  		<a href="/task/${task.id}/stop" class="btn">Reset</a>
-		  		<a href="/task/${task.id}/done" class="btn btn-success">Done</a>
+		  		<a href="<t:route name="stop-task" task="${task.id}"/>" class="btn">Reset</a>
+		  		<a href="<t:route name="finished-task" task="${task.id}"/>" class="btn btn-success">Done</a>
 		  	</t:elseif>
 		  	<t:else>
-		  	 	<a href="/task/${task.id}/start" class="btn">Start</a>
-		  	 	<a href="/task/${task.id}/archive" class="btn">Archive</a>
+		  	 	<a href="<t:route name="start-task" task="${task.id}"/>" class="btn">Start</a>
+		  	 	<a href="<t:route name="archive-task" task="${task.id}"/>" class="btn">Archive</a>
 		  	</t:else>
 		</div>
 	</div>
 	<div id="edit" style="display: none;">
 		
-		<form action="/task/${task.id}" method="post" class="form-horizontal">
+		<form action="<t:route name="update-task" task="${task.id}"/>" method="post" class="form-horizontal">
 			<input type="hidden" name="task.id" value="${task.id}" />
 			<input type="hidden" name="task.archived" value="${task.archived}" />
 			

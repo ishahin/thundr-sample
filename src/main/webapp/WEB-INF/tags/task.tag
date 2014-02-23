@@ -19,7 +19,7 @@
   	
 	<div class="media-body span7">
 	    <h4 class="media-heading">
-	    <a href="/task/${task.id}">${task.title}</a>	
+	    <a href="<t:route name="view-task" task="${task.id}"/>">${task.title}</a>	
 	    </h4>
 		<div>
 			${task.description}
@@ -29,16 +29,16 @@
   	<div class="span3">
   		
 	  	<t:if condition="${task.status == 'Done'}">
-			<a href="/task/${task.id}/stop" class="btn">Reset</a>
-	  		<a href="/task/${task.id}/archive" class="btn">Archive</a>
+			<a href="<t:route name="stop-task" task="${task.id}"/>" class="btn">Reset</a>
+	  		<a href="<t:route name="stop-task" task="${archive.id}"/>" class="btn">Archive</a>
 	  	</t:if>
 	  	<t:elseif condition="${task.status == 'Underway'}">
-	  		<a href="/task/${task.id}/stop" class="btn">Reset</a>
-	  		<a href="/task/${task.id}/done" class="btn btn-success">Done</a>
+	  		<a href="<t:route name="stop-task" task="${task.id}"/>" class="btn">Reset</a>
+	  		<a href="<t:route name="finished-task" task="${task.id}"/>" class="btn btn-success">Done</a>
 	  	</t:elseif>
 	  	<t:else>
-	  	 	<a href="/task/${task.id}/start" class="btn">Start</a>
-	  	 	<a href="/task/${task.id}/archive" class="btn">Archive</a>
+	  	 	<a href="<t:route name="start-task" task="${task.id}"/>" class="btn">Start</a>
+	  	 	<a href="<t:route name="archive-task" task="${task.id}"/>" class="btn">Archive</a>
 	  	</t:else>
 	  	
  	</div>

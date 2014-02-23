@@ -10,17 +10,13 @@
 <t:style src="bootstrap.min.css" />
 <t:style src="font-awesome.min.css" />
 <t:script src="jquery-1.9.0.min.js" />
-<script>
-	$(document).ready(function() {
-	});
-</script>
 <jsp:doBody />
 </head>
 <body id="${id}">
 	<header class="container">
 		<nav class="navbar">
 			<div class="navbar-inner">
-				<a class="brand" href="/">My tasks</a>
+				<a class="brand" href="<t:route name="home"/>">My tasks</a>
 			<ul class="nav pull-right">
   				<li>
     				<a href="/_ah/admin">Admin</a>

@@ -34,7 +34,7 @@ remove the git repository and delete any sample code you're not interested in.
 This branch contains a working implementation of a thundr application
 running using Google's AppEngine (GAE). It relies on the thundr-gae module.
 
-Read more about thundr-gae [here](http://3wks.github.io/thundr/modules/thundr-gae/appengine.html)
+Read more about thundr-gae [here](http://3wks.github.io/thundr/thundr-gae/index.html)
 
 To run, use the appengine maven plugin:
 

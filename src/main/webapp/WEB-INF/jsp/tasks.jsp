@@ -15,7 +15,7 @@
 	<br/>
 	<br/>
 	
-	<form action="/task/create" method="post" class="form-inline well">
+	<form action="<t:route name="create-task"/>" method="post" class="form-inline well">
 		<input type="text" name="task.title" class="span3" placeholder="Title"/>
 		<textarea name="task.description" rows="1" class="span7" placeholder="Description"></textarea>
 		<input type="submit" value="Create" class="btn span2"/>
