@@ -4,12 +4,14 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.util.List;
 
+import com.threewks.thundr.gae.objectify.repository.BaseRepository;
 import com.threewks.thundr.sample.Task;
 
 public class TaskServiceImpl implements TaskService {
+	private BaseRepository<Task> taskRepository = new BaseRepository<>(Task.class, null, null);
 
 	public List<Task> list() {
-		return ofy().load().type(Task.class).filter("archived", false).list();
+		return taskRepository.loadByField("archived", false);
 	}
 
 	public List<Task> list(TaskStatus status) {
@@ -17,11 +19,10 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	public Task put(Task task) {
-		ofy().save().entity(task).now();
-		return task;
+		return taskRepository.save(task).complete();
 	}
 
 	public Task get(Long id) {
-		return ofy().load().type(Task.class).id(id).get();
+		return taskRepository.load(id);
 	}
 }
