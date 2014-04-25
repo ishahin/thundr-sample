@@ -25,7 +25,7 @@
 			${task.description}
 		</div>
   	</div>
-  	
+  	<%-- 
   	<div class="span3">
   		
 	  	<t:if condition="${task.status == 'Done'}">
@@ -42,4 +42,5 @@
 	  	</t:else>
 	  	
  	</div>
+ 	--%>
 </article>
